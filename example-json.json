@@ -35,7 +35,15 @@
 				 content: 'first child child div text, without extended attributes and classes'
 				},
 				{
-				 content: 'second child child div text, without extended attributes and classes'
+					defaults: [
+						{
+							type: 'jaga',
+							data: 'jaga'
+						}
+					],
+					content: {
+			 			content: 'some alone text'
+					}
 				}
 			]
 		}
