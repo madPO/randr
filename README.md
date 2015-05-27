@@ -11,7 +11,7 @@ json = {
     },
     {
       type: 'any-cool-attribute',
-      data: 'if ur attribute will have params'
+      data: 'if attribute will have params'
     }
   ],
   content: [ <!-- array of nodes, alone node or text content -->
