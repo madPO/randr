@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>randr • html dom from json</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="randr.js"></script>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	randr(json,function(v){$('body').html(v)});
+});
+</script>
+<script type="text/javascript">
+var json = {
+	node: 'div',
+	defaults: [
+		{
+			type: 'super-attr'
+		},
+		{
+			type: 'class',
+			data: 'super-class'
+		},
+		{
+			type: 'src',
+			data: '/some-src-path'
+		}
+	],
+	content: [
+		{
+			node: 'div',
+			implement: false,
+			defaults: [
+				{
+					type: 'phonenumber',
+					data: '11'
+				}
+			],
+			content: [
+				{
+					node: 'p',
+					content: 'some paragraph'
+				},
+				{
+					node: 'p',
+					content: 'some paragraph2'
+				}
+			]
+		},
+		{
+			content: [
+				{
+					node: 'ul',
+					defaults: [
+						{
+							type: 'UL',
+							data: 'some-ul'
+						}
+					],
+					content: [
+						{
+							node: 'li',
+							extend: false,
+							defaults: [
+								{
+									type: 'phonenumber',
+									data: '2125676'
+								},
+								{
+									type: 'width',
+									data: '150'
+								}
+							],
+							content: 'li text'
+						},
+						{
+							node: 'li',
+							content: [
+								{
+									node: 'div',
+									content: 'Go away HTML, go away!'
+								},
+								{
+									node: 'div',
+									content: [
+										{
+											node: 'img'
+										},
+										{
+											node: 'div',
+											extend: false,
+											content: [
+												{
+													node: 'button',
+													defaults: [
+														{
+															type: 'phone',
+															data: '919'
+														}
+													],
+													content: 'Save'
+												},
+												{
+													node: 'button',
+													content: 'Delete'
+												},
+												{
+													node: 'div',
+													content: 'dome div text'
+												},
+												{
+													node: 'div',
+													content: 'some div text 2'
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
+</script>
+</html>
