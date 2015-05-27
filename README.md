@@ -4,24 +4,45 @@ randr • html dom from json
 1.Create JSON object like this:
 
 {
-
-  node: 'div', <!-- any node. 'div' is default if no node -->
-  
-  defaults: [
-  
-    {
-      type: 'class',
-      data: 'some awesome styles and classes'
-    },
-    {
-      type: 'any-cool-attribute',
-      data: 'if attribute will have params'
-    }
-    
-  ],
-  
-  content: [ <!-- array of nodes, alone node or text content -->
-    
-  ]
-  
+	node: 'div',
+	defaults: [
+		{
+			type: 'class',
+			data: 'your awasome classes'
+		},
+		{
+			type: 'super-attr',
+			data: 'super-attr value'
+		}
+	],
+	content: [
+		{
+			content: 'some child div text'
+		},
+		{
+			node: 'img',
+			extend: false,
+			defaults: [
+				{
+					type: 'class',
+					data: 'json-img-class without extended classes and attributes'
+				},
+				{
+					type: 'src',
+					data: 'http://sg.uploads.ru/QXJ5a.png'
+				}
+			]
+		},
+		{
+			implement: false,
+			content: [
+				{
+				 content: 'first child child div text, without extended attributes and classes'
+				},
+				{
+				 content: 'second child child div text, without extended attributes and classes'
+				}
+			]
+		}
+	]
 }
