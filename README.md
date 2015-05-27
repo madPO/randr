@@ -3,7 +3,7 @@ randr • html dom from json
 
 1.Create JSON object like this:
 
-json = {
+{
 
   node: 'div', <!-- any node. 'div' is default if no node -->
   
