@@ -3,6 +3,7 @@ randr • html dom from json
 
 1.Create JSON object like this:
 
+<code>
 {
 	node: 'div',
 	defaults: [
@@ -46,3 +47,4 @@ randr • html dom from json
 		}
 	]
 }
+</code>
