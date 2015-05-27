@@ -4,7 +4,7 @@ randr • html dom from json
 1.Create JSON object like this:
 
 <code>
-{
+{\n
 	node: 'div',
 	defaults: [
 		{
