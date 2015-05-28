@@ -42,7 +42,7 @@ var json = {
         },
         {
           type: 'title',
-          data: ''
+          data: 'json image'
         }
       ]
     }
