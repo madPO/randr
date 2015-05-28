@@ -9,123 +9,60 @@
 <body>
 </body>
 <script type="text/javascript">
+var nodes = {
+	'div-image': function(){
+		var a = document.createElement('div');
+		var b = document.createElement('img');
+		b.setAttribute('src','http://sg.uploads.ru/QXJ5a.png');
+		a.appendChild(b);
+		return a;
+	}
+}
 $(document).ready(function(){
-	randr(json,function(v){$('body').html(v)});
+	$('body').html(randr(json,nodes));
 });
 </script>
 <script type="text/javascript">
 var json = {
-	node: 'div',
-	defaults: [
-		{
-			type: 'super-attr'
-		},
-		{
-			type: 'class',
-			data: 'super-class'
-		},
-		{
-			type: 'src',
-			data: '/some-src-path'
-		}
-	],
-	content: [
-		{
-			node: 'div',
-			implement: false,
-			defaults: [
-				{
-					type: 'phonenumber',
-					data: '11'
-				}
-			],
-			content: [
-				{
-					node: 'p',
-					content: 'some paragraph'
-				},
-				{
-					node: 'p',
-					content: 'some paragraph2'
-				}
-			]
-		},
-		{
-			content: [
-				{
-					node: 'ul',
-					defaults: [
-						{
-							type: 'UL',
-							data: 'some-ul'
-						}
-					],
-					content: [
-						{
-							node: 'li',
-							extend: false,
-							defaults: [
-								{
-									type: 'phonenumber',
-									data: '2125676'
-								},
-								{
-									type: 'width',
-									data: '150'
-								}
-							],
-							content: 'li text'
-						},
-						{
-							node: 'li',
-							content: [
-								{
-									node: 'div',
-									content: 'Go away HTML, go away!'
-								},
-								{
-									node: 'div',
-									content: [
-										{
-											node: 'img'
-										},
-										{
-											node: 'div',
-											extend: false,
-											content: [
-												{
-													node: 'button',
-													defaults: [
-														{
-															type: 'phone',
-															data: '919'
-														}
-													],
-													content: 'Save'
-												},
-												{
-													node: 'button',
-													content: 'Delete'
-												},
-												{
-													node: 'div',
-													content: 'dome div text'
-												},
-												{
-													node: 'div',
-													content: 'some div text 2'
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					]
-				}
-			]
-		}
-	]
+  node: 'div',
+  defaults: [
+    {
+      type: 'class',
+      data: 'super-block'
+    }
+  ],
+  content: [
+    {
+      node: 'div',
+      implement: false,
+      defaults: [
+        {
+          type: 'class',
+          data: 'text-block'
+        }
+      ],
+      content: [
+        {
+          node: 'p',
+          content: 'paragraph which doesnt inherit parent defaults attributes, because of a parents implement flag'
+        }
+      ]
+    },
+    {
+      node: 'img',
+      extend: false,
+      defaults: [
+        {
+          type: 'src',
+          data: 'http://sh.uploads.ru/9F2LR.png'
+        },
+        {
+          type: 'title',
+          data: ''
+        }
+      ]
+    }
+  ]
 }
 </script>
 </html>
