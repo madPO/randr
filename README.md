@@ -1,7 +1,7 @@
 # randr
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dolphin4ik/randr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
-randr • html dom from json
+randr • html dom from json on javascript
 
 ### How to start?
 
