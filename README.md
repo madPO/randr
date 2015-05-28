@@ -28,7 +28,7 @@ var json = {
       content: [
         {
           node: 'p',
-          content: 'paragraph which doesnt inherit parent defaults attributes, cause of a parents implement flag'
+          content: 'p tag which doesnt inherit parent defaults attributes, cause of a parents implement flag'
         }
       ]
     },
@@ -99,7 +99,7 @@ Its simple, but its not all that randr can.
 U can shrink the json:
 ```javascript
 {
-  content: 'alone content with text makes <p></p> with this text'
+  content: 'alone content with text makes p tag with this text'
 }
 ```
 If content is not a string randr automatically makes div node:
