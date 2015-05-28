@@ -133,7 +133,7 @@ And also u can do this:
   }
 }
 ```
-Its make
+It make
 ```html
 <div>
   <div>
