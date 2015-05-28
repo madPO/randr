@@ -68,7 +68,6 @@ and some flags:
 
 > *imlement*
 
-and
 > *extend*
 
 *node* is a typical DOM node
