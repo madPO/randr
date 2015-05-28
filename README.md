@@ -122,3 +122,15 @@ And u can do it infinitely:
   }
 }
 ```
+
+And also u can do this:
+```javascript
+{
+  {
+    {
+      {}
+    }
+  }
+}
+```
+Its make div> div> div> div></div </div </div </div
