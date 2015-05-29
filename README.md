@@ -122,24 +122,3 @@ And u can do it infinitely:
   }
 }
 ```
-
-And also u can do this:
-```javascript
-{
-  {
-    {
-      {}
-    }
-  }
-}
-```
-It make
-```html
-<div>
-  <div>
-    <div>
-      <div></div>
-    </div>
-  </div>
-</div>
-```
