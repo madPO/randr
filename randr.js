@@ -1,32 +1,33 @@
 /* randr: a js library, which makes html dom from json */
 /* author: denyzhirkov@yandex.ru @dolphin4ik */
-/* cersion: 0.3.1 */
+/* cersion: 0.3.2 */
 ;var randr = function(json,nodes){
-	this.version = '0.3.1';
+	this.version = '0.3.2';
 	this.nodes = function(t){return document.createElement(t);}
-
+	var flag = true;
 	var stack = function(a,b){
 		var c = '';
 		var stack = [];
-		for (var i = b.length - 1; i >= 0; i--) {
+		for (var i in b) {
 			if(b[i].type!='class'){stack.push({type:b[i].type,data:b[i].data});}
 			else{c = b[i].data;}
 		};
-		for (var i = a.length - 1; i >= 0; i--) {
+		for (var i in a) {
 			if(a[i].type!='class'){stack.push({type:a[i].type,data:a[i].data});}
 			else{c += ' '+a[i].data;}
 		};
 		stack.push({type:'class',data:c});
 		return stack;
 	}
-
 	var render = function(k){
 		k.implement = (k.implement==undefined || k.implement==true)? true : false;
 		k.extend = (k.extend==undefined || k.extend==true)? true : false;
-		var node = (k.node==undefined)?
-			( (k.content==undefined || typeof(k.content)!='string')? this.nodes('div') : this.nodes('p') )
-			:
-			( (nodes!=undefined && nodes[k.node]!=undefined)? nodes[k.node]() : this.nodes(k.node) );
+		var node;
+		if(k.node==undefined){
+			if(k.content==undefined || typeof(k.content)!='string'){node=this.nodes('div');}else{node=this.nodes('p');}
+		}else{
+			if(nodes!=undefined && nodes[k.node]!=undefined){node=nodes[k.node](k.content);flag=false;}else{node=this.nodes(k.node);}
+		}
 		if(k.defaults!==undefined){
 			for (var i = k.defaults.length - 1; i >= 0; i--){
 				node.setAttribute(k.defaults[i].type, k.defaults[i].data || '');
@@ -37,7 +38,7 @@
 				$(node).on(k.events[i].type,k.events[i].action);
 			};
 		}
-		if(k.content!==undefined){
+		if(k.content!==undefined && flag){
 			//array
 			if(k.content instanceof Array){
 				k.content.reverse();
