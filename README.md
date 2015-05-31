@@ -50,7 +50,7 @@ var json = {
 }
 ```
 
-* Append this json somewhere with randr:
+* Append\insert this json somewhere with randr:
 ```javascript
 document.body.appendChild(randr(json));
 ```
@@ -77,7 +77,7 @@ and some flags:
 ```javascript
 {
   type: 'attribute',<!-- required -->
-  data: 'attribute option'
+  data: 'option'
 }
 ```
 
@@ -121,4 +121,38 @@ And u can do it infinitely:
     }
   }
 }
+```
+And here's a pie:
+U can make ur own ``nodes``, just create an object, each option of it must be a function:
+
+```js
+var myNodes = {
+  profile: function(options){
+    var d = document.createElement('div');
+    var p = document.createElement('p');
+    var a = document.createElement('a');
+    a.setAttribute('href',options.href);
+    a.innerHTML = options.name;
+    var i = document.createElement('img');
+    i.setAttriute('src',options.image);
+    p.appendChild(a);
+    p.appendChild(i);
+    d.appendChild(p);
+    return d;
+  }
+}
+```
+And after only enter this node in randr object:
+
+```js
+var json = {
+  node: 'profile',<!-- Your node -->
+  content: {
+    href: 'https://github.com/dolphin4ik',
+    image: 'https://avatars0.githubusercontent.com/u/2123689?v=3&s=96',
+    name: 'dolphin4ik'
+  }
+}
+
+document.body.appendChild(randr(json, myNodes));
 ```
