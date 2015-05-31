@@ -122,8 +122,8 @@ And u can do it infinitely:
   }
 }
 ```
-And here's a pie:
-U can make ur own ``nodes``, just create an object, each option of it must be a function:
+And here's a pie!</br>
+You can make ur own ``nodes``, just create an object, each option of it must be a function:
 
 ```js
 var myNodes = {
