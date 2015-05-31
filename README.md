@@ -70,9 +70,9 @@ and some flags:
 
 > *extend*
 
-*node* is a typical DOM node
+``node`` is a typical DOM node
 
-*defaults* is an array of attribute objects for this DOM node:
+``defaults`` is an array of attribute objects for this DOM node:
 
 ```javascript
 {
@@ -81,15 +81,15 @@ and some flags:
 }
 ```
 
-*content* can be a **string**, **object** and **array** of objects
+``content`` can be a **string**, **object** and **array** of objects
 
-*implement* flag implements the **defaults** attributes to childs, if not *false*. <!-- not required -->
+``implement`` flag implements the **defaults** attributes to childs, if not *false*. <!-- not required -->
 
 ```javascript
 implement: false
 ```
 
-*extend* flag extends the **defaults** attributes from parent, if not *false*. <!-- not required -->
+``extend`` flag extends the **defaults** attributes from parent, if not *false*. <!-- not required -->
 
 >> Note, that parent "class" attributes stacks with child "class", but another attributes will be overwrited with childs..
 
