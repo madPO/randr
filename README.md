@@ -142,7 +142,7 @@ var myNodes = {
   }
 }
 ```
-And after only enter this node in randr object:
+And after only enter this node in json and randr object:
 
 ```js
 var json = {
