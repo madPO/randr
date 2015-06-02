@@ -33,6 +33,7 @@
 				node.setAttribute(k.defaults[i].type, k.defaults[i].data || '');
 			};
 		}
+		//events !demo
 		if(k.events!==undefined){
 			for (var i = k.events.length - 1; i >= 0; i--){
 				$(node).on(k.events[i].type,k.events[i].action);
