@@ -1,8 +1,8 @@
 /* randr: a js library, which makes html dom from json */
 /* author: denyzhirkov@yandex.ru @dolphin4ik */
-/* version: 0.3.2 */
-;var randr = function(json,nodes){
-	this.version = '0.3.2';
+/* version: 0.3.3 */
+;var randr = function(json,nodes,type){
+	this.version = '0.3.3';
 	this.nodes = function(t){return document.createElement(t);}
 	var flag = true;
 	var stack = function(a,b){
@@ -26,7 +26,7 @@
 		if(k.node==undefined){
 			if(k.content==undefined || typeof(k.content)!='string'){node=this.nodes('div');}else{node=this.nodes('p');}
 		}else{
-			if(nodes!=undefined && nodes[k.node]!=undefined){node=nodes[k.node](k.content);flag=false;}else{node=this.nodes(k.node);}
+			if(nodes!=false && nodes!=undefined && nodes[k.node]!=undefined){node=nodes[k.node](k.content);flag=false;}else{node=this.nodes(k.node);}
 		}
 		if(k.defaults!==undefined){
 			for (var i = k.defaults.length - 1; i >= 0; i--){
@@ -72,7 +72,12 @@
 		}
 		return node;
 	}
-
-	return render(json);
+	if(type!=true){
+		return render(json);
+	}else{
+		var tmp = document.createElement('div');
+		tmp.appendChild(render(json));
+		return tmp.innerHTML;
+	}
 
 };
