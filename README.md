@@ -9,6 +9,7 @@ randr • html dom from json on javascript
 ```javascript
 var json = {
   node: 'div',
+  implement: true,
   defaults: [
     {
       type: 'class',
@@ -18,7 +19,6 @@ var json = {
   content: [
     {
       node: 'div',
-      implement: false,
       defaults: [
         {
           type: 'class',
@@ -34,7 +34,6 @@ var json = {
     },
     {
       node: 'img',
-      extend: false,
       defaults: [
         {
           type: 'src',
