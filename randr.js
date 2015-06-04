@@ -1,8 +1,8 @@
 /* randr: a js library, which makes html dom from json */
 /* author: denyzhirkov@yandex.ru @dolphin4ik */
-/* version: 0.3.3 */
+/* version: 0.4.1 */
 ;var randr = function(json,nodes,type){
-	this.version = '0.3.3';
+	this.version = '0.4.1';
 	this.nodes = function(t){return document.createElement(t);}
 	var flag = true;
 	var stack = function(a,b){
@@ -20,8 +20,8 @@
 		return stack;
 	}
 	var render = function(k){
-		k.implement = (k.implement==undefined || k.implement==true)? true : false;
-		k.extend = (k.extend==undefined || k.extend==true)? true : false;
+		k.implement = (k.implement==undefined || k.implement==false)? false : true;
+		k.extend = (k.extend==undefined || k.extend==false)? false : true;
 		var node;
 		if(k.node==undefined){
 			if(k.content==undefined || typeof(k.content)!='string'){node=this.nodes('div');}else{node=this.nodes('p');}
