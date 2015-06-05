@@ -156,5 +156,5 @@ var json = {
 document.body.appendChild(randr(json, myNodes));
 ```
 
-### Note
+### !Note
 Third option (if ``true``) in randr returns **rendered** ``json`` as text
