@@ -158,3 +158,6 @@ document.body.appendChild(randr(json, myNodes));
 
 ### !Note
 Third option (if ``true``) in randr returns **rendered** ``json`` as text
+```js
+document.body.innerHTML = randr(json, myNodes,true);
+```
