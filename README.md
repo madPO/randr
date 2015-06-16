@@ -152,12 +152,15 @@ var json = {
     name: 'dolphin4ik'
   }
 }
-
+```
+Enter this new nodes as a second option in randr:
+```js
 document.body.appendChild(randr(json, myNodes));
 ```
+
 
 ### !Note
 Third option (if ``true``) in randr returns **rendered** ``json`` as text
 ```js
-document.body.innerHTML = randr(json, myNodes,true);
+document.body.innerHTML = randr(json, myNodes, true);
 ```
