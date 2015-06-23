@@ -71,12 +71,25 @@ and some flags:
 
 ``node`` is a typical DOM node
 
-``defaults`` is an array of attribute objects for this DOM node:
+``defaults`` is an array (or object with key=>value properties) of attribute objects for this DOM node:
 
 ```javascript
-{
-  type: 'attribute',<!-- required -->
-  data: 'option'
+defaults: [
+  {
+    type: 'attribute',<!-- required -->
+    data: 'value'
+  },
+  {
+    type: 'attribute2',<!-- required -->
+    data: 'value2'
+  }
+]
+
+or
+
+defaults: {
+  attribute: value,
+  attribute2: value2
 }
 ```
 
