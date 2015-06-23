@@ -113,7 +113,7 @@ Its simple, but its not all that randr can.
 U can shrink the json:
 ```javascript
 {
-  content: 'alone content with text makes p tag with this text'
+  content: 'alone content with string makes p tag with text'
 }
 ```
 If content is not a string randr automatically makes div node:
