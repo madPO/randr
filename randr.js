@@ -1,6 +1,7 @@
 /* randr: a js library, which makes html dom from json */
-/* author: denyzhirkov@yandex.ru @dolphin4ik */
+/* author: denyzhirkov@yandex.ru, @dolphin4ik */
 /* version: 1.0.1 */
+
 ;var randr = function(json,nodes,type){
 	this.version = '1.0.1';
 	this.nodes = function(t){return document.createElement(t);}
