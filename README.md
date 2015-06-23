@@ -103,7 +103,8 @@ implement: true
 
 ``extend`` flag extends the **defaults** attributes from parent, if *true*. <!-- not required -->
 
->> Note, that parent "class" attributes stacks with child "class", but another attributes will be overwrited with childs..
+>> ! Note, that parent "class" attributes stacks with child "class", but another attributes will be overwrited with childs..
+>> ! Note2, that implemented or extended "defaults" must be the same types (object or array)
 
 
 Its simple, but its not all that randr can.
